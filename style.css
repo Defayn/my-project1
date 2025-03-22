@@ -19,6 +19,7 @@ header h1 {
 
 .main-news {
     display: flex;
+    flex-direction: row;
     background: #eef0f1;
     padding: 15px;
     margin-bottom: 20px;
@@ -39,25 +40,33 @@ header h1 {
 .news-list {
     display: flex;
     justify-content: space-between;
-	
-	
 }
 
-.news-item {
-    width: 30%;
-    background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    text-align: center;
-}
+/* Мобилдик түзмөктөр үчүн стилдер */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
 
-.news-item img {
-    width: 100%;
-    height: auto;
-}
+    .main-news {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
 
-.news-text h3 {
-    font-size: 16px;
-    margin-top: 10px;
-	
+    .main-news .main-image {
+        width: 100%;
+        margin: 0 auto 10px;
+    }
+
+    .news-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-item {
+        width: 90%;
+        margin-bottom: 15px;
+    }
 }
